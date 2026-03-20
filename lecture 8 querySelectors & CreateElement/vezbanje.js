@@ -72,12 +72,12 @@ document.querySelector(".card").appendChild(h3);
 document.querySelector(".card").appendChild(para);
 
 //8
-let poeni = 39;
+let poeni = 40;
 if (poeni >= 60)
 {
     rezultat.textContent = "Odlican";
 }
-else if (poeni < 60 && poeni > 40)
+else if (poeni < 60 && poeni >= 40)
 {
     rezultat.textContent = "Dobar";
 }
