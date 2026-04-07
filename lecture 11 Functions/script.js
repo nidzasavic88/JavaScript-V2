@@ -116,7 +116,7 @@ let typeSelector = document.querySelector("#typeSelector");
 let roomsSelector = document.querySelector("#roomsSelector");
 
 // -------------------- POPULATE CITIES --------------------
-// --------------------  D O M A C I  -----------------------
+// --------------------  V E Z B A  -----------------------
 for (let city of cities) {
 
     let option = document.createElement("option");
