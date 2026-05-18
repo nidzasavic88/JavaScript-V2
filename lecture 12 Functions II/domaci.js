@@ -4,7 +4,7 @@
 
 function login(username, password)
 {
-    return username.toLowerCase() === "admin" && password.toLowerCase() === "admin";
+    return username === "admin" && password === "admin";
 }
 console.log(login("admin", "admin"));
 console.log(login("Admin", "Admin"));
