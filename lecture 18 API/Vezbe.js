@@ -399,6 +399,54 @@ movieInput12.addEventListener("keydown", function(event) {
     }
 });
 
+//13
+
+let avengersPosts = document.getElementById("avengersPosts");
+
+let avengersButton = document.createElement("button");
+avengersButton.textContent = "Učitaj Avengers filmove";
+
+avengersPosts.before(avengersButton);
+
+avengersButton.addEventListener("click", function () {
+
+    avengersPosts.innerHTML = "";
+
+    fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=avengers`)
+        .then(response => response.json())
+        .then(data => {
+
+            for (let movie of data.Search) {
+
+                fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        title: movie.Title,
+                        year: movie.Year
+                    })
+                })
+                    .then(response => response.json())
+                    .then(postData => {
+
+                        let li = document.createElement("li");
+
+                        li.textContent =
+                            `${movie.Title} - Kreirani ID: ${postData.id}`;
+
+                        avengersPosts.appendChild(li);
+                    });
+            }
+        })
+        .catch(error => {
+            console.log("Greška:", error);
+        });
+});
+
 //14
 
 let spidermanIds = document.getElementById("spidermanIds");

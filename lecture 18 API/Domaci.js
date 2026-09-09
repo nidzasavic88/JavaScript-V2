@@ -21,6 +21,8 @@ document.getElementById("searchMovie").addEventListener("click", async () => {
     else {
         let movieList = document.getElementById("movieList");
 
+        movieList.innerHTML = "";
+
         for(let movie of response['Search']) {
 
             let movieHolder = document.createElement("div");
