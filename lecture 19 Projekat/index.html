@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lecture 19 Projekat</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<form>
+    <input id="movieTitle" type="text" placeholder="Enter movie title">
+    <input id="movieYear" type="number" placeholder="Enter movie Year">
+    <select id="movieType">
+        <option selected value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+    </select>
+    <button id="searchMovie" type="button">Search</button>
+</form>
+
+<p id="searchError"></p>
+
+<div id="movieList">
+
+</div>
+
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
